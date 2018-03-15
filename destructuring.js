@@ -22,7 +22,7 @@ var carDetails = {
 */
 
 //Code Here
-
+var {color,make,model,year} = carDetails;
 
 
 ////////// PROBLEM 2 //////////
@@ -35,7 +35,7 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
-  
+  var {firstName,lastName,title}= obj;
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -54,7 +54,14 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function totalPopulation(obj){
+  const {utah,california,texas,arizona} = obj;
+  var num =0; 
+ for(let key in obj){
+     num +=obj[key];
+ }
+ return num;
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -68,7 +75,14 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function ingredients(obj){
+   var {carb,fat,protein} = obj;
+   var empty = [];
+   for(var key in obj){
+      empty.push(obj[key]);
+   }
+   return empty;
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -86,6 +100,14 @@ function greeting( obj ) {
 */
 
 //Code Here
+function largeNumbers({first,second,third}){
+  var empty =[];
+   for(let key in {first,second,third}){
+     empty.push({first,second,third}[key]);
+   }
+   var mini = Math.min(...empty);
+   return mini;
+}
 
 
 
@@ -98,5 +120,12 @@ function greeting( obj ) {
 */
 
 //Code Here
+
+function numberGroups({a,b,c}){ 
+   if(a.length>b.length && a.length>c.length)
+   {return a;}
+   else if(a.length<b.length && b.length>c.length){return b;}
+   else{return c;}
+}
 
 

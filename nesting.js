@@ -6,7 +6,7 @@
   You can refresh the page at any time to re-run all the tests.
 */
 
-////////// PROBLEM 1 //////////
+////////// PROBLEM 1 /////////
 
 // Do not edit the code below.
 var employees = [
@@ -51,6 +51,20 @@ var employees = [
 */
 
 //Code Here
+function employeeUpdater(){
+var emp = [];
+  for(var i =0; i<employees.length; i++){
+    if(employees[i].firstName =="Lorie"){
+       employees[i].department = "HR";
+
+    
+    if(employees[i].firstName !=="Theo"){
+      emp.push(employees[i]);
+    }
+  }
+   }
+   return emp;
+}
 
 
 
@@ -62,12 +76,25 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 /*
   The array above represents IDs tied to reported workplace accidents. 
-  An employee accidentally entered in duplicates to array, making it look as though there are more accidents this year than there actually are.
+  An employee accidentally entered in duplicates to array, making it look as though there are more accidents this year thanthere actually are.
     1. Write a function called 'removeDuplicates' that will remove all duplicate entries in the workplaceAccidents array.
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
 */
-
+function removeDuplicates(){
+  var empty = [];
+  for(var i=0; i<workplaceAccidents.length; i++){
+    if(workplaceAccidents.lastIndexOf(workplaceAccidents[i])==workplaceAccidents.indexOf(workplaceAccidents[i])){
+    empty.push(workplaceAccidents[i]);
+    }
+    else {
+      if(i<workplaceAccidents.lastIndexOf(workplaceAccidents[i]) && workplaceAccidents.indexOf(workplaceAccidents[i])==i){
+        empty.push(workplaceAccidents[i]);
+      }
+    }
+  }
+  return empty;
+}
 //Code Here
 
 
@@ -97,8 +124,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend=cat.catFriends[1].name;
 
 
 
@@ -138,7 +165,12 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(){
+  for(var i=0; i<myCar.accidents.length; i++ ){
+    myCar.accidents[i].atFaultForAccident = false;
+  }
+  return myCar;
+}
 
 
 
@@ -159,4 +191,16 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
 //Code Here
 
-
+function looper(){
+  var i =0;
+  var o=0;
+  for(i =0; i<numsArr.length; i++){
+      for(o =0; o<numsArr[i].length; o++){
+        if(numsArr[i][o]%2===0){numsArr[i][o]="even"}
+        else {numsArr[i][o]="odd"}
+      }
+  }
+  return numsArr;
+  
+}
+console.log(numsArr);

@@ -6,6 +6,8 @@
   You can refresh the page at any time to re-run all the tests.
 */
 
+
+
 /*
   First we'll look at the difference between accessing property values in a for in loop and accessing the property name in a for in loop.
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
@@ -23,9 +25,9 @@
 //   console.log(values[key])
 // }
 
-/*
-  In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
-*/
+// /*
+//   In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
+// */
 
 // for(var key in values) {
 //   console.log(key)
@@ -40,7 +42,11 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  var str = ""
+  for(let key in obj){
+    str +=obj[key];
+  }
+  return str;
 }
 
 
@@ -55,7 +61,14 @@ function showValues( obj ) {
 
 //Code Here
 
-
+function greaterThan10(obj){
+  for(let ket in obj){
+    if(obj[ket]>10){
+      obj[ket] =0;
+    }
+  }
+  return obj;
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -66,8 +79,12 @@ function showValues( obj ) {
 */
 
 //Code Here
-
-
+function double(obj){
+  for(let key in obj){
+    obj[key]*=2 
+  }
+  return obj;
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -80,6 +97,15 @@ function showValues( obj ) {
 */
 
 //Code Here
+function secrets(obj){
+  var str ="";
+  for(let key in obj){
+    if(key.indexOf("sh")===0){
+      str+=obj[key];
+    }
+  }
+  return str;
+}
 
 
 
@@ -109,6 +135,16 @@ function showValues( obj ) {
   Write a function called removePassword that takes in an object.
   Delete the property password and return the object.
 */
+function removePassword (obj){
+  for(let i  in obj)
+  {
+    if(i=="password"){
+    delete obj[i];
+    }
+
+  }
+  return obj;
+}
 
 //Code Here
 
@@ -128,8 +164,12 @@ var deleteTheBigNumbers = {
 /*
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
+for(var key in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[key]>100){
+  delete deleteTheBigNumbers[key];
+  }
+}
 
-//Code Here
 
 
 
@@ -143,7 +183,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+function startsWithK(obj){
+   for(let key in obj){
+     if(key.indexOf("k")===0){
+       delete obj[key];
+     }
+   }
+   return obj;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -158,5 +205,12 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+function hiddenTreasure(obj){
+    for(let key in obj){
+      if(obj[key].indexOf("treasure")==-1){
+           delete obj[key];
+      }
+    }
+   return obj;
+}
 
